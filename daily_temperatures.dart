@@ -13,4 +13,19 @@ class Solution {
 
     return res;
   }
+
+  List<int> dailyTemperatures2(List<int> temperatures) {
+    int n = temperatures.length;
+    List<int> res = List.generate(n, (index) => 0);
+    List<int> stack = [];
+    for (int i = 0; i < n; i++) {
+      while (stack.isNotEmpty && temperatures[i] > temperatures[stack.last]) {
+        int j = stack.removeLast();
+        res[j] = i - j;
+      }
+      stack.add(i);
+    }
+
+    return res;
+  }
 }

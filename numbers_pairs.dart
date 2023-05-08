@@ -1,4 +1,19 @@
 class Solution {
+  int numPairsDivisibleBy60Another(List<int> time) {
+    List<int> map = List.filled(60, 0);
+    int res = 0;
+    for (int i = 0; i < time.length; i++) {
+      int mod = time[i] % 60;
+      if (mod == 0) {
+        res += map[0];
+      } else {
+        res += map[60 - mod];
+      }
+      map[mod]++;
+    }
+    return res;
+  }
+
   int numPairsDivisibleBy60(List<int> time) {
     time.sort();
     int n = time.length;

@@ -26,3 +26,36 @@ class Solution {
     return res;
   }
 }
+
+class Solution2 {
+  int res = 0;
+
+  int countTime(String time) {
+    dfs(time, 0);
+    return res;
+  }
+
+  void dfs(String time, int pos) {
+    if (pos == time.length) {
+      if (isValid(time)) {
+        res++;
+      }
+      return;
+    }
+    if (time[pos] == '?') {
+      for (int i = 0; i <= 9; i++) {
+        time = time.replaceRange(pos, pos + 1, i.toString());
+        dfs(time, pos + 1);
+        // 其实这一步是没必要的
+        time = time.replaceRange(pos, pos + 1, "?");
+      }
+    } else {
+      dfs(time, pos + 1);
+    }
+  }
+
+  bool isValid(String time) {
+    List<String> numbers = time.split(":");
+    return int.parse(numbers[0]) <= 23 && int.parse(numbers[1]) <= 59;
+  }
+}

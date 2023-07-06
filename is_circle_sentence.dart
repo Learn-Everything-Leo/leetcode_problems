@@ -26,4 +26,17 @@ class Solution {
     }
     return true;
   }
+
+  bool isCircularSentence2(String sentence) {
+    if (sentence.substring(0, 1) != sentence.substring(sentence.length - 1)) {
+      return false;
+    }
+
+    for (int i = 0; i < sentence.length; i++) {
+      if (sentence[i] == ' ' && sentence[i - 1] != sentence[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

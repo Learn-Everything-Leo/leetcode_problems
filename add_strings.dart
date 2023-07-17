@@ -27,4 +27,21 @@ class Solution {
     }
     return res.toString().split('').reversed.join('');
   }
+
+  String addStrings2(String num1, String num2) {
+    int m = num1.length, n = num2.length;
+    int carryOne = 0;
+    int index1 = m - 1, index2 = n - 1;
+    StringBuffer res = StringBuffer();
+    while (index1 >= 0 || index2 >= 0 || carryOne > 0) {
+      int x = index1 >= 0 ? int.parse(num1[index1]) : 0;
+      int y = index2 >= 0 ? int.parse(num2[index2]) : 0;
+      int sum = x + y + carryOne;
+      res.write(sum % 10);
+      carryOne = sum ~/ 10;
+      index1--;
+      index2--;
+    }
+    return res.toString().split('').reversed.join('');
+  }
 }

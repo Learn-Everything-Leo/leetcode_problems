@@ -13,7 +13,7 @@ class Solution {
     }
     int res = 0;
     for (int i = 1; i < n - 1; i++) {
-      res += max(0, min(leftMax[i - 1], rightMax[n - 1 - i - 1]) - height[i]);
+      res += min(leftMax[i], rightMax[n - 1 - i]) - height[i];
     }
     return res;
   }

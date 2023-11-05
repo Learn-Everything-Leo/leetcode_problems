@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def findRepeatedDnaSequences(self, s: str) -> List[str]:
         sequence_count = {}  # 创建一个哈希表来存储每个子序列的出现次数

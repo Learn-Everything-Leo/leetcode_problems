@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def findChampion(self, grid: List[List[int]]) -> int:
         ans = 0

@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def findChampion(self, n: int, edges: List[List[int]]) -> int:
         arr = [i for i in range(n)]

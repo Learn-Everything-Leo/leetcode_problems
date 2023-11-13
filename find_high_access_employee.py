@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def findHighAccessEmployees(self, access_times: List[List[str]]) -> List[str]:
         n = len(access_times)

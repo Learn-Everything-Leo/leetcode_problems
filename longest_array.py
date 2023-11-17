@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def longestAlternatingSubarray(self, nums: List[int], threshold: int) -> int:
         res, dp = 0, 0

@@ -3,19 +3,14 @@ from ast import List
 
 class Solution:
     def isWinner(self, player1: List[int], player2: List[int]) -> int:
-        res, sum1, sum2 = 0, 0, 0
-        n = len(player1)
-        for i in range(n):
-            sum1 += player1[i]
-            sum2 += player2[i]
-        if n > 2 and (player1[0] == 10 or player1[0] == 10):
-            for i in range(2, n):
-                    sum1 += player1[i]
-        
-        if n > 2 and (player2[0] == 10 or player2[0] == 10):
-            for i in range(2, n):
-                    sum2 += player2[i]
-        res = 1 if sum1 > sum2 else 2
-        if (sum1 == sum2):
+        def score(player):
             res = 0
-        return res
+            for i, x in enumerate(player):
+                if i > 0 and player[i - 1] == 10 or i > 1 and player[i - 2] == 10:
+                    res += 2 * x
+                else:
+                    res += x
+            return res
+        
+        s1, s2 = score(player1), score(player2)
+        return 0 if s1 == s2 else 1 if s1 > s2 else 2

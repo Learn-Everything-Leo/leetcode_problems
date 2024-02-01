@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def distinctDifferenceArray(self, nums: List[int]) -> List[int]:
         n = len(nums)

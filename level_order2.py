@@ -1,10 +1,12 @@
-"""
 # Definition for a Node.
+from collections import deque
+from altair import List
+
+
 class Node:
     def __init__(self, val=None, children=None):
         self.val = val
         self.children = children
-"""
 
 
 class Solution:

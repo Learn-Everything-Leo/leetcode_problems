@@ -1,4 +1,7 @@
 # Definition for a Node.
+from ast import List
+
+
 class Node:
     def __init__(self, val=None, children=None):
         self.val = val

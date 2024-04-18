@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def findShortestSubArray(self, nums: List[int]) -> int:
         mp = dict()

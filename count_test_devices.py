@@ -1,3 +1,6 @@
+from ast import List
+
+
 class Solution:
     def countTestedDevices(self, batteryPercentages: List[int]) -> int:
         res = 0

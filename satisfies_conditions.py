@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def satisfiesConditions(self, grid: List[List[int]]) -> bool:
         for i in range(len(grid)):
